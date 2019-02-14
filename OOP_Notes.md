@@ -51,3 +51,27 @@ SubType y = (SubType)x;
 
 - Can have superclass objects in a subclass collection
 - Easier to iterate over
+
+## Constructor Inheritance
+
+- Subclass will call the superclass constructor implicitly without you specifying in the subclass constructor
+- The `super` call is always on the first line in a subclass constructor
+
+## Wrapper Classes
+
+- Where a subclass of `Object` is needed, e.g a collection then primitive types can't be used
+- Primitives can be wrapped up in an object
+  - `Integer` wraps `int`
+  - `Character` wraps `char`
+- Java will automatically use the wrapper classes without you having to specify them
+  - Called auto-boxing/unboxing
+
+## Object
+
+- At the root of all inheritance hierarchies is the `Object` class
+- This is implied, no need for explicit
+
+### toString()
+
+- Override this to change what it returns when casting as a string
+- Is used for `System.out.println`
