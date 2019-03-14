@@ -94,3 +94,51 @@ public class SimpleHelloWorldextends Application {
 - `parent`s can be either:
   - A `Region` which provides an area for controls to have their layout managed and to have CSS applied
   - A `Group` brings together child components such as graphics to be managed together through transforms, but does not have a layout. We won't be focusing on these 😉
+
+## TL;DR
+
+- Look this shit up.
+
+## Layout
+
+- When we have more than 1 component, we wanna arrange them in a usable way
+- Old-style is to use absolute positions, e.g pixels
+  - Requires a knowledge of the screen to look nice
+  - Even iOS is moving from this now
+- Java provides code which does common arrangements for us automatically and still allows the UI to be resized cleanly
+- Now use geometry for the positioning
+
+### JavaFX Layout
+
+- We add `Control`s to `Pane`s, a subclass of `Region`s
+- Different `Pane` classes have different layouts
+- A layout is a way of setting out the components when the region is resized, or when a new component is added
+- Classic layout examples are rows, columns, stacks, tiles and others
+- A `Parent` has an `ObservableList` of children, which is accessed via `getChildren()` and `add()` to append another on the list
+
+### Hbox And Vbox
+
+- Hbox adds the components in a horizontal box
+- Vbox adds them in a vertical box, setting the width to the largest
+- Components are resized if the box is shrunk
+
+#### Panes
+
+- `BorderPane`
+  - Lays children out in either top, right, center, left, bottom positions
+  - Top/bottom keep to preferred heights and extend width
+  - Right/left keep to preferred widths and extend height
+  - Center extends both height and width
+- `FlowPane`
+  - Puts components side by side
+  - Adds the components in either a horizontal or vertical orientation
+  - Preferred width or height determines the wrap around point
+  - Components are resized if the box is shrunk
+- `StackPane`
+  - Has multiple layers where components can be on top of each other
+  - Lays children down in order in the z plane ie on top of each other
+  - Provides a simple mechanism to build overlays
+
+## Summary
+
+-
